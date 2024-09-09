@@ -1,6 +1,10 @@
 //create schema
 const {Schema,model} = require("mongoose");
 const serviceSchema = new Schema({
+    images:{
+        type: String,
+        require: true
+    },
     service: {
         type: String,
         require: true
