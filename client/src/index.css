@@ -474,6 +474,30 @@ body tr{
     }
 }
 /** end user admin **/
+/** password eye icon **/
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding-right: 40px; /* Add padding to make space for the icon */
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+
+.password-toggle-icon {
+    position: relative;
+    right: 50px;
+    top:7px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 3em; /* Adjust size to match the input *
+    background-color: transparent; /* Transparent to visually blend with input */
+}
+
+/** end **/
 /** -----------------------
 ** media query section css
 ** -------------------------  */
