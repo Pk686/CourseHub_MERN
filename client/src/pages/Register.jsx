@@ -2,12 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 //const URL = `${LocalHost}/api/auth/register`;
 
 export const Register = () => {
-
     //state hooks  
     //user -- state variable setUser -- updated function
     const [user, setUser] = useState({ //hook
@@ -21,7 +20,7 @@ export const Register = () => {
 
     //calling storeToken function
     const {storeTokeninLS,LocalHost} = useAuth();
-
+    const [showPassword, setShowPassword] = useState(false);
     //handling the input values
     const handleInput = (e) => {
         //console.log(e);
@@ -31,6 +30,9 @@ export const Register = () => {
             ...user, //spread operator
             [name]: value, //dynamic names(changes)
         });
+    }
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     }
     //handling the form submission
     const handleSubmit = async (e) => {
@@ -117,9 +119,10 @@ export const Register = () => {
                                         onChange={handleInput}
                                     />
                                 </div>
-                                <div>
+                                <div className="password-field">
                                     <label htmlFor="password">password</label>
-                                    <input type="text"
+                                    <div className="password-input-container">
+                                    <input type={showPassword ? "text" : "password"}
                                         name="password"
                                         placeholder="password"
                                         id="password"
@@ -128,6 +131,10 @@ export const Register = () => {
                                         value={user.password}
                                         onChange={handleInput}
                                     />
+                                    <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    </span>
+                                    </div>
                                 </div>
                                 <br />
                                 <button type="submit" className="btn btn-submit">Register Now</button>
