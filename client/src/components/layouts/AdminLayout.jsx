@@ -15,7 +15,7 @@ export const AdminLayout = () =>{
         <header>
         <div className="container">
             <nav>
-            <ul>
+            <ul style={{display:'flex',gap: '3.2rem'}}>
                 <li><NavLink to="/admin/users"><FaUserTie/>Users</NavLink></li>
                 <li><NavLink to="/admin/contacts"><MdContacts/>Contacts</NavLink></li>
                 <li><NavLink to="/services"><MdMiscellaneousServices />Services</NavLink></li>
