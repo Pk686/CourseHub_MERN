@@ -11,7 +11,7 @@ export const AuthContext = createContext();
 //step 2 -- creating a provider component for passing children component data
 export const AuthProvider = ({ children }) => {
 
-    const LocalHost = "http://localhost:5000";
+    const LocalHost = "https://coursehub-mern.onrender.com";
     //useState function to get token item
     const [token, setToken] = useState(
         localStorage.getItem("token")
