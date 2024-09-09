@@ -9,11 +9,11 @@ export const Service = () => {
             </div>
             <div className="container grid grid-three-cols">
             {service.map((currElem,Index)=>{
-                const {price,description,provider,service} = currElem;
+                const {price,description,provider,service,images} = currElem;
                 return (
                     <div className="card" key={Index}>
                     <div className="card-img">
-                        <img src="/images/design.png" alt="our services" width="500" />
+                        <img src={ `/${images}`} alt="our services" width="500" />
                     </div>
                     <div className="card-details">
                         <div className="grid grid-two-cols">
