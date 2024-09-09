@@ -35,6 +35,29 @@
           width: 100%; /* Make hero image responsive */
       }
   }
+  .password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding-right: 40px; /* Add padding to make space for the icon */
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 1.5em; /* Adjust size to match the input */
+    padding: 0 5px;
+    background-color: transparent; /* Transparent to visually blend with input */
+}
+
 }
 
 @media (max-width: 480px) {
@@ -91,4 +114,27 @@
           }
       }
   }
+  .password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding-right: 40px; /* Add padding to make space for the icon */
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 1.5em; /* Adjust size to match the input */
+    padding: 0 5px;
+    background-color: transparent; /* Transparent to visually blend with input */
+}
+
 }
