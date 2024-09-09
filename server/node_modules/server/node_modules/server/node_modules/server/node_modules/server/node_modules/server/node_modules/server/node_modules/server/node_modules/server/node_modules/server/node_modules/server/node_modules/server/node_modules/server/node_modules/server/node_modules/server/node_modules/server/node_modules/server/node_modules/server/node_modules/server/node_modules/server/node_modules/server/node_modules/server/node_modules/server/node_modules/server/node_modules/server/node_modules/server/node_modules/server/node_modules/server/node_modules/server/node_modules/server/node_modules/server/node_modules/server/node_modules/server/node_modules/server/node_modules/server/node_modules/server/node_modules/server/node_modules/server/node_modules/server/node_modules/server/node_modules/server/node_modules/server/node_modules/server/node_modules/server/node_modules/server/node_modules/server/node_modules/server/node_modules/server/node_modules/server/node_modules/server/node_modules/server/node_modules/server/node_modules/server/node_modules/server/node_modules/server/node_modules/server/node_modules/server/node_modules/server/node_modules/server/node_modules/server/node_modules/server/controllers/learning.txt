@@ -1,0 +1,7 @@
+1. creating server with express js -- 
+important modules -- express,nodemon,get request with call back fun,listen fun to register on a port
+2. express routers,controllers -- 
+important modules -- express.Router() class, controllers -- action -- creating get request with async fun.
+3. express middleware used in registration form using postman -- 
+important modules -- express.json(),res.status(200).json(re.body),router.route("/register").post(register)
+4.connecting database with backend
