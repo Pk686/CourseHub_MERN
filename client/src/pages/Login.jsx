@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from 'react-toastify';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 //const URL = `${LocalHost}/api/auth/login`;
 
@@ -16,8 +17,8 @@ export const Login = () => {
     });
     const navigate = useNavigate();
     //calling storeToken function
-    const { storeTokeninLS,LocalHost } = useAuth();
-
+    const { storeTokeninLS, LocalHost } = useAuth();
+    const [showPassword, setShowPassword] = useState(false); // New state to toggle password visibility
     //handling the input
     const handleInput = (e) => {
         //console.log(e);
@@ -28,6 +29,9 @@ export const Login = () => {
             //updates values for particular field and returns with previous form data(user)
             [name]: value, //dynamic names(changes) 
         });
+    }
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     }
     //handling the form submission
     const handleSubmit = async (e) => {
@@ -41,7 +45,7 @@ export const Login = () => {
             });
             const res_data = await response.json();
             console.log(res_data);
-            if(res_data.message=="Invalid Credentials"){
+            if (res_data.message == "Invalid Credentials") {
                 return toast.error(`Invalid Credentials`);
             }
             if (response.ok) {
@@ -96,9 +100,10 @@ export const Login = () => {
                                     />
                                 </div>
 
-                                <div>
+                                <div className="password-field">
                                     <label htmlFor="password">password</label>
-                                    <input type="text"
+                                    <div className="password-input-container">
+                                    <input type={showPassword ? "text" : "password"}
                                         name="password"
                                         placeholder="password"
                                         id="password"
@@ -107,7 +112,12 @@ export const Login = () => {
                                         value={user.password}
                                         onChange={handleInput}
                                     />
+                                    <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    </span>
+                                    </div>
                                 </div>
+
                                 <br />
                                 <button type="submit" className="btn btn-submit">Login Now</button>
                             </form>
