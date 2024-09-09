@@ -12,7 +12,7 @@ const adminRoute = require("./router/admin_router");
 
 //tackle cors policy error
 const corsOption = {
-   origin:"https://coursehub-mern-frontend.onrender.com/",
+   origin:"https://coursehub-mern-frontend.onrender.com",
    methods:"GET,POST,PUT,DELETE,PATCH,HEAD",
    credentials:true
 };
